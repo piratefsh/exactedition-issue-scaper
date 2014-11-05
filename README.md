@@ -4,10 +4,12 @@ Simple scraper to download pdf pages from [Exact Editions](https://www.exactedit
 
 Please only use if you have a subscription to an existing magazine and do not use to scrape for distribution. Writers and artists gotta make a living too :)
 
-## Requirements
+## Installation
+### Dependencies
 * CasperJS - [site](http://casperjs.org/)
 * PhantomJS - [site](http://phantomjs.org/)
 
+### Npm
 To install dependencies
 ```
 npm install
