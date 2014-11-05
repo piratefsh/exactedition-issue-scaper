@@ -75,3 +75,5 @@ Then run in terminal
 casperjs getpage.js
 ```
 
+Files will be downloaded to 'download' child directory
+

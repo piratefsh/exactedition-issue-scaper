@@ -36,6 +36,8 @@ var getPage = function(){
 }
 
 var goToIssue = function(link){
+    pageCounter = 0;
+
     // get to nth issue
     casper.echo('Issue ' + link);
     casper.open(link);
