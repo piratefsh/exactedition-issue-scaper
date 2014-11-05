@@ -26,7 +26,8 @@ var getPage = function(){
 
     // download pdf of that page
     var title = casper.getHTML('.issueTitle');
-    casper.download(pdfLink, 'downloads/' + title + '-' + ++pageCounter + '-' + pageNum + '.pdf')
+    var dir =  'downloads/' + title + '/';
+    casper.download(pdfLink, dir + title + '-' + ++pageCounter + '-' + pageNum + '.pdf')
 
     // if has next page, go there and repeat
     if(casper.exists('a.nextPage')){

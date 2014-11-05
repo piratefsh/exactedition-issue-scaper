@@ -6,23 +6,17 @@ var casper = require('casper').create();
 var utils = require('utils');
 
 // example page labels and prefix
-var pageLabels = ['11', '19', '21', '23', '25', '27', '29'];
+var pageLabels = ['9'];
 var pagePrefix = {
-    '11' : '42',
-    '19' : '46',
-    '21' : '47',
-    '23' : '48',
-    '25' : '49',
-    '27' : '50',
-    '29' : '51'
+    '9' : '06'
 };
 
 // link to issue
-var issueUrl = ''
+var issueUrl = 'http://www.exacteditions.com/read/popshot/the-imagination-issue-36066'
 
 // change to your username and password
-var username = '';
-var password = '';
+var username = 'sherminn.chong@gmail.com';
+var password = 'quartz91';
 
 // get pages while there is next
 var getPage = function(page){
@@ -46,7 +40,8 @@ var getPage = function(page){
 
         // download pdf of that page
         var title = casper.getHTML('.issueTitle');
-        casper.download(pdfLink, title + '-' + prefix + '-' + page + '.pdf')
+        var dir =  'downloads/' + title + '/';
+        casper.download(pdfLink, dir + title + '-' + prefix + '-' + page + '.pdf')
     })
 }
 
