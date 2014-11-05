@@ -12,11 +12,11 @@ var pagePrefix = {
 };
 
 // link to issue
-var issueUrl = 'http://www.exacteditions.com/read/popshot/the-imagination-issue-36066'
+var issueUrl = ''
 
 // change to your username and password
-var username = 'sherminn.chong@gmail.com';
-var password = 'quartz91';
+var username = '';
+var password = '';
 
 // get pages while there is next
 var getPage = function(page){
@@ -48,12 +48,9 @@ var getPage = function(page){
 // login
 casper.start('https://login.exacteditions.com/login.do', function(){
     // validate links and username
-    if(pageLabels.length < 1 || issueUrl.length < 1){
-        this.die('Please add at least one page and issue');
-    }
-
-    if(username == 'your username' || username.length < 1){
-        this.die('Please enter your own username and password');
+    if(pageLabels.length < 1 || issueUrl.length < 1
+        || username.length < 1 || password.length < 1){
+        this.die('Usage: casperjs getissue.js --username=<your EE username> --password=<your EE password> <issue_link_1>...<issue_link_n>');
     }
 
     this.fill('form#loginForm', {

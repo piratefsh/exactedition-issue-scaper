@@ -21,25 +21,11 @@ npm install
 ###Fetch all pages of one issue
 Clone this repo. Cd to the folder.
 
-Open getissue.js. Set your links, username and password. Command line options coming soon (maybe).
-
-```javascript
-// links to issues to download (right-click on issue, get url), usually in format
-// http://www.exacteditions.com/read/<magazine>/<issue-title>   
-var links = [
-    'http://www.exacteditions.com/read/popshot/the-journeys-issue-38709',
-    'http://www.exacteditions.com/read/popshot/the-wild-issue-36840'
-];
-
-// change to your username and password
-var username = 'my username';
-var password = 'my password';
-```
-
 Then run in terminal
 
 ```
-casperjs getissue.js
+casperjs getissue.js --username=<your EE username> --password=<your EE password> <issue_link_1>...<issue_link_n>
+
 ```
 
 ###Fetch specific pages of one issue
@@ -65,16 +51,13 @@ var pagePrefix = {
 // http://www.exacteditions.com/read/<magazine>/<issue-title>   
 var issueUrl = 'http://www.exacteditions.com/read/popshot/the-journeys-issue-38709'
 
-// change to your username and password
-var username = 'my username';
-var password = 'my password';
 ```
 
 
 Then run in terminal
 
 ```
-casperjs getpage.js
+casperjs getpage.js --username=<your EE username> --password=<your EE password>
 ```
 
 Files will be downloaded to 'download' child directory
