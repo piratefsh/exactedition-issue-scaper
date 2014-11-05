@@ -2,7 +2,7 @@
 
 Simple scraper to download pdf pages from [Exact Editions](https://www.exacteditions.com) magazines. Using CasperJS and PhantomJs. Only usable with a subscription.
 
-Please only use if you have a subscription to an existing magazine and do not use to scrape for distribution. Writers and artists gotta make a living too :)
+Please only use if you have a subscription to an existing magazine and do not use to scrape for distribution. Respect intellectual property -- writers and artists gotta make a living too :)
 
 ## Installation
 ### Dependencies
