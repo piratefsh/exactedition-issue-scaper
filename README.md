@@ -1,9 +1,12 @@
 # Exact Editions Issue Pages Scraper
 
-Simple scraper to download pdf pages from Exact Editions magazines. Using CasperJS and PhantomJs. Only usable with a subscription.
+Simple scraper to download pdf pages from [Exact Editions](https://www.exacteditions.com) magazines. Using CasperJS and PhantomJs. Only usable with a subscription.
+
+Please only use if you have a subscription to an existing magazine. 
 
 ## Requirements
-CasperJS - [site](http://casperjs.org/)
+* CasperJS - [site](http://casperjs.org/)
+* PhantomJS - [site](http://phantomjs.org/)
 
 To install dependencies
 ```
@@ -19,11 +22,11 @@ Open getissue.js. Set your links, username and password. Command line options co
 ```javascript
 // links to issue to download (right-click on issue, get url), usually in format
 // http://www.exacteditions.com/read/<magazine>/<issue-title>   
-var links = [];
+var links = ['http://www.exacteditions.com/read/popshot/the-journeys-issue-38709'];
 
 // change to your username and password
-var username = '';
-var password = '';
+var username = 'my username';
+var password = 'my password';
 ```
 
 Then run in terminal
@@ -40,11 +43,11 @@ Open getpage.js
 Set options.
 
 ```javascript
-// example page labels and prefix
 // page prefix is used in file naming: 
 // <issue title>-<prefix>-<page label number>.pdf
-// In the case below filename will be Issue-A-11.pdf
+// In the case below, the downloaded file name will be Issue-A-11.pdf
 
+// example page labels and prefix
 var pageLabels = ['11', '19'];
 var pagePrefix = {
     '11' : 'A',
@@ -52,11 +55,12 @@ var pagePrefix = {
 };
 
 // link to issue
-var issueUrl = ''
+// http://www.exacteditions.com/read/<magazine>/<issue-title>   
+var issueUrl = 'http://www.exacteditions.com/read/popshot/the-journeys-issue-38709'
 
 // change to your username and password
-var username = '';
-var password = '';
+var username = 'my username';
+var password = 'my password';
 ```
 
 
