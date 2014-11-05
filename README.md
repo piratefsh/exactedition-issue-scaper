@@ -2,7 +2,7 @@
 
 Simple scraper to download pdf pages from [Exact Editions](https://www.exacteditions.com) magazines. Using CasperJS and PhantomJs. Only usable with a subscription.
 
-Please only use if you have a subscription to an existing magazine. 
+Please only use if you have a subscription to an existing magazine and do not use to scrape for distribution. Writers and artists gotta make a living too :)
 
 ## Requirements
 * CasperJS - [site](http://casperjs.org/)
@@ -20,9 +20,12 @@ Clone this repo. Cd to the folder.
 Open getissue.js. Set your links, username and password. Command line options coming soon (maybe).
 
 ```javascript
-// links to issue to download (right-click on issue, get url), usually in format
+// links to issues to download (right-click on issue, get url), usually in format
 // http://www.exacteditions.com/read/<magazine>/<issue-title>   
-var links = ['http://www.exacteditions.com/read/popshot/the-journeys-issue-38709'];
+var links = [
+    'http://www.exacteditions.com/read/popshot/the-journeys-issue-38709',
+    'http://www.exacteditions.com/read/popshot/the-wild-issue-36840'
+];
 
 // change to your username and password
 var username = 'my username';
