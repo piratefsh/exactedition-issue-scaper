@@ -1,19 +1,19 @@
 // downloads pdf pages for an issue on Exact Editions. pages saved in format:
 // <issue title>-<prefix>-<page label number>.pdf
 
-
-var casper = require('casper').create();
-var utils = require('utils');
-var pageCounter = 0;
-var issueCounter = 2;
-
 // links to issue to download (right-click on issue, get url), usually in format
 // http://www.exacteditions.com/read/<magazine>/<issue-title>   
 var links = [];
 
 // change to your username and password
-var username = 'your username';
-var password = 'your password';
+var username = '';
+var password = '';
+
+// requirements and vars
+var casper = require('casper').create();
+var utils = require('utils');
+var pageCounter = 0;
+
 
 // get pages while there is next
 var getPage = function(){
@@ -57,7 +57,7 @@ casper.start('https://login.exacteditions.com/login.do', function(){
         this.die('Please add at least one link an issue');
     }
 
-    if(username == 'username' || username.length < 1){
+    if(username.length < 1 || password.length < 1){
         this.die('Please enter your own username and password');
     }
 
