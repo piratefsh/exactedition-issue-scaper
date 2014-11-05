@@ -4,6 +4,8 @@ Simple scraper to download pdf pages from [Exact Editions](https://www.exactedit
 
 Please only use if you have a subscription to an existing magazine and do not use to scrape for distribution. Respect intellectual property -- writers and artists gotta make a living too :)
 
+Please read Exact Edition's [terms of service](https://www.exacteditions.com/help.do?subject=102706) if in doubt.
+
 ## Installation
 ### Dependencies
 * CasperJS - [site](http://casperjs.org/)
