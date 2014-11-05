@@ -1,3 +1,7 @@
+// downloads pdf pages for an issue on Exact Editions. pages saved in format:
+// <issue title>-<prefix>-<page label number>.pdf
+
+
 var casper = require('casper').create();
 var utils = require('utils');
 var pageCounter = 0;
@@ -22,7 +26,7 @@ var getPage = function(){
 
     // download pdf of that page
     var title = casper.getHTML('.issueTitle');
-    casper.download(pdfLink, title + '-' + ++pageCounter + '-' + pageNum + '.pdf')
+    casper.download(pdfLink, 'downloads/' + title + '-' + ++pageCounter + '-' + pageNum + '.pdf')
 
     // if has next page, go there and repeat
     if(casper.exists('a.nextPage')){
