@@ -62,3 +62,10 @@ casperjs getpage.js --username=<your EE username> --password=<your EE password>
 
 Files will be downloaded to 'download' child directory
 
+## Compiling to one PDF
+Used [PDFTK](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/) on command line for this. You will have to install it.
+
+```
+pdftk *.pdf cat output output.pdf
+```
+
