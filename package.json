@@ -1,0 +1,23 @@
+{
+  "name": "exactedition-issue-scaper",
+  "version": "1.0.0",
+  "description": "Scraper to download pdf pages from Exact Editions magazines. Using CasperJS and PhantomJs. Only usable with a subscription.",
+  "main": "getissue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scraper",
+    "exacteditions",
+    "exact",
+    "editions",
+    "pages",
+    "issues"
+  ],
+  "author": "Sher Minn Chong (sherminn.chong@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "casperjs": "^1.1.0-beta3",
+    "phantomjs": "^1.9.12"
+  }
+}
