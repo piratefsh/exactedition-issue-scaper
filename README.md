@@ -31,34 +31,26 @@ casperjs getissue.js --username=<your EE username> --password=<your EE password>
 ###Fetch specific pages of one issue
 Usually when a few pages from getissue.js fails.
 
-Open getpage.js
+Run in terminal
 
-Set options.
-
-```javascript
-// page prefix is used in file naming: 
-// <issue title>-<prefix>-<page label number>.pdf
-// In the case below, the downloaded file name will be Issue-A-11.pdf
-
-// example page labels and prefix
-var pageLabels = ['11', '19'];
-var pagePrefix = {
-    '11' : 'A',
-    '19' : 'B',
-};
-
-// link to issue
-// http://www.exacteditions.com/read/<magazine>/<issue-title>   
-var issueUrl = 'http://www.exacteditions.com/read/popshot/the-journeys-issue-38709'
+```
+casperjs getissue.js --username=<your EE username> --password=<your EE password> --pages=<page 1>:<prefix 1>,<page 2>:<prefix 2> <issue_link>
 
 ```
 
+Note that prefix is used in the following way for file naming (to be consistent with getissue.ja named files:
+`<issue title>-<prefix>-<page label number>.pdf`
 
-Then run in terminal
+For example:
 
 ```
-casperjs getpage.js --username=<your EE username> --password=<your EE password>
+casperjs getpage.js --username=name@example.com --password=example --pages=OFC:001,11:ABC http://www.exacteditions.com/read/popshot/the-time-issue-40247
+
 ```
+
+Will download the following
+* The Time Issue-001-OFC.pdf
+* The Time Issue-ABC-11.pdf
 
 Files will be downloaded to 'download' child directory
 
