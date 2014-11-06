@@ -38,8 +38,11 @@ casperjs getissue.js --username=<your EE username> --password=<your EE password>
 
 ```
 
-Note that prefix is used in the following way for file naming (to be consistent with getissue.ja named files:
-`<issue title>-<prefix>-<page label number>.pdf`
+Note that prefix is used in the following way for file naming (to be consistent with getissue.js named files:
+
+```
+<issue title>-<prefix>-<page label number>.pdf
+```
 
 For example:
 
