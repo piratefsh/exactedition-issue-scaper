@@ -68,9 +68,8 @@ casper.start('https://login.exacteditions.com/login.do', function(){
     }
 
     if(links.length < 1){
-        this.die('Please add at least one link and issue');
+        this.die('Please add at least one link to an issue');
     }
-
 
     this.fill('form#loginForm', {
         username: username,

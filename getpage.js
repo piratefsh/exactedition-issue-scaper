@@ -12,7 +12,7 @@ var pagePrefix = {};
 // link to issue
 var issueUrl = ''
 
-// change to your username and password
+// your username and password
 var username = '';
 var password = '';
 
