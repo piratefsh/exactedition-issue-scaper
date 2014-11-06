@@ -1,15 +1,13 @@
 // to download failed pages from page issue
-// page labels should be prefix: page number map, where prefix is used in naming the pdf:
-// <issue title>-<prefix>-<page label number>.pdf
 
 var casper = require('casper').create();
 var utils = require('utils');
 
-// example page labels and prefix
-var pageLabels = ['9'];
-var pagePrefix = {
-    '9' : '06'
-};
+// page labels and prefix
+// page labels should be prefix: page number map, where prefix is used in naming the pdf:
+// <issue title>-<prefix>-<page label number>.pdf
+var pageLabels = [];
+var pagePrefix = {};
 
 // link to issue
 var issueUrl = ''
@@ -47,10 +45,27 @@ var getPage = function(page){
 
 // login
 casper.start('https://login.exacteditions.com/login.do', function(){
-    // validate links and username
-    if(pageLabels.length < 1 || issueUrl.length < 1
-        || username.length < 1 || password.length < 1){
-        this.die('Usage: casperjs getissue.js --username=<your EE username> --password=<your EE password> <issue_link_1>...<issue_link_n>');
+    // get cli arguments for username, password and link to issue
+    if(casper.cli.has('username') && casper.cli.has('password') && casper.cli.has('pages') && casper.cli.args){
+        username = casper.cli.get('username');
+        password = casper.cli.get('password');
+        issueUrl = casper.cli.args[0];
+
+        var pagesArgs = casper.cli.get('pages');
+        var pagePrefixPairs = pagesArgs.split(',');
+
+        // parse page numbers and prefixes
+        for(var i = 0; i < pagePrefixPairs.length; i++){
+            var pair = pagePrefixPairs[i].split(':');
+            pageLabels.push(pair[0]);
+
+            if(pair[1]){
+                pagePrefix[pair[0]] = pair[1];
+            }
+        }
+    }
+    else {
+        this.die('Usage: casperjs getissue.js --username=<your EE username> --password=<your EE password> --pages=<page 1>:<prefix 1>,<page 2>:<prefix 2> <issue_link>');
     }
 
     this.fill('form#loginForm', {
@@ -62,11 +77,13 @@ casper.start('https://login.exacteditions.com/login.do', function(){
     this.echo('Logging in...')
 });
 
-// go to each issue
-casper.each(pageLabels, function(self, page){
-    self.then(function(){
-        getPage(page);
+// get each page
+casper.then(function(){
+    casper.each(pageLabels, function(self, page){
+        self.then(function(){
+            getPage(page);
+        });
     });
-});
+})
 
 casper.run();
