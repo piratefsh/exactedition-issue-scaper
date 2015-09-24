@@ -71,12 +71,12 @@ casper.start('https://login.exacteditions.com/login.do', function(){
         this.die('Please add at least one link to an issue');
     }
 
-    this.fill('form#loginForm', {
+    this.fill('form#form-username', {
         username: username,
         password: password,
     });
 
-    this.click('input[type=submit]');
+    this.click('button[type=submit]');
     this.echo('Logging in...')
 });
 

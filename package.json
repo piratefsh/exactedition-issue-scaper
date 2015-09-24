@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "casperjs": "^1.1.0-beta3",
-    "phantomjs": "^1.9.12",
+    "phantomjs": "^1.9.18",
     "sprint": "^0.3.1"
   },
   "repository": {

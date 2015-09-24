@@ -14,7 +14,7 @@ Please read Exact Edition's [terms of service](https://www.exacteditions.com/hel
 ### Npm
 To install dependencies
 ```
-npm install
+npm install -g
 ```
 
 ## Usage
